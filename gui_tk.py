@@ -2,6 +2,11 @@ from tkinter import *
 import requests
 from bs4 import BeautifulSoup
 import tkintermapview
+import psycopg2
+
+db_params=psycopg2.connect(
+    user="postgres",database="postgres",host="localhost",port="5432",password="geoinformatyka"
+)
 
 users=[]
 class User:
@@ -39,6 +44,13 @@ def dodaj_uzytkownika():
     entry_miejscowosc.delete(0, END)
     entry_imie.focus()
 
+    longitude, latitude = User.get_coords(user)
+    cursor = db_params.cursor()
+    sql = f"INSERT INTO public.users(name, surname, posts, location, coords) VALUES('{imie}', '{nazwisko}',{posty}, '{miejscowosc}', 'SRID=4326;POINT({latitude} {longitude})');"
+    cursor.execute(sql)
+    db_params.commit()
+    cursor.close()
+
 
 def lista_uzytkownikow():
     listbox_lista_obiektow.delete(0, END)
@@ -47,6 +59,12 @@ def lista_uzytkownikow():
 
 def pokaz_szczegoly_uzytkownika():
     i=listbox_lista_obiektow.index(ACTIVE)
+    cursor = db_params.cursor()
+    sql = f"SELECT * FROM public.users"
+    cursor.execute(sql)
+    users_db = cursor.fetchall()
+    cursor.close()
+    for user in users:
     print(i)
     imie=users[i].imie
     nazwisko=users[i].nazwisko
@@ -54,6 +72,7 @@ def pokaz_szczegoly_uzytkownika():
     miejscowosc=users[i].miejscowosc
     map_widget.set_position(users[i].coords[0],users[i].coords[1])
     map_widget.set_zoom(15)
+    
 
     label_imie_szczegoly_wartosc.config(text=imie)
     label_nazwisko_szczegoly_wartosc.config(text=nazwisko)
@@ -62,6 +81,11 @@ def pokaz_szczegoly_uzytkownika():
 
 def usun_uzytkownika():
     i=listbox_lista_obiektow.index(ACTIVE)
+    cursor = db_params.cursor()
+    sql = f"DELETE FROM public.users WHERE name='{users[i].imie}';"
+    cursor.execute(sql)
+    db_params.commit()
+    cursor.close()
     users[i].marker.delete()
     users.pop(i)
     lista_uzytkownikow()
