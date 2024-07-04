@@ -1,21 +1,21 @@
 events = [
-    {"name": "Dzień sportu AWF", "locations": "Warszawa", "members": [{"name": "Mariusz Pudzianowski",
+    {"name": "Dzień sportu AWF", "locations": "Warszawa", "members": [{"name": "Michał Padzio",
                                                                                        "miejscowosc": "Rzeszów"},
-                                                                                      {"name": "Władysław Łokietek",
+                                                                                      {"name": "Wojtek Wilk",
                                                                                        "miejscowosc":
                                                                                            "Rybnik"}],
-     "employees": [{"name": "Anna Nowak", "miejscowosc": "Kraków"}, {"name": "Piotr Kowalski", "miejscowosc": "Łódź"}]},
-    {"name": "Turniej piłki nożej AWL", "locations": "Wrocław", "members": [{"name": "Mariusz Pudzianowski",
+     "employees": [{"name": "Adam Nowak", "miejscowosc": "Kraków"}, {"name": "Michał Kowalski", "miejscowosc": "Łódź"}]},
+    {"name": "Turniej piłki nożej AWL", "locations": "Wrocław", "members": [{"name": "Maciek Kot",
                                                                                     "miejscowosc": "Kielce"},
-                                                                                   {"name": "Adam Nowak",
+                                                                                   {"name": "Ela Michał",
                                                                                     "miejscowosc": "Gdańsk"}],
-     "employees": [{"name": "Klaudia Mickiewicz", "miejscowosc": "Katowice"}, {"name": "Krzysztof Wiśniewski", "miejscowosc": "Toruń"}]},
-    {"name": "Trójbój PP", "locations": "Poznań", "members": [{"name": "Jan Kowalski",
+     "employees": [{"name": "Klaudia Moraczyńska", "miejscowosc": "Katowice"}, {"name": "Krzysztof Krawczyk", "miejscowosc": "Toruń"}]},
+    {"name": "Trójbój PP", "locations": "Poznań", "members": [{"name": "Janek Kowalski",
                                                                                    "miejscowosc":
                                                                                        "Szczecin"},
-                                                                                  {"name": "Władysław Łokietek",
+                                                                                  {"name": "Władysław Kowalski",
                                                                                    "miejscowosc":
                                                                                        "Katowice"}],
-     "employees": [{"name": "Marta Kwiatkowska", "miejscowosc": "Mińsk Mazowiecki"}, {"name": "Tomasz Jankowski", "miejscowosc": "Zakopane"}]},
+     "employees": [{"name": "Mikołaj Rej", "miejscowosc": "Mińsk Mazowiecki"}, {"name": "Tomasz Piotr", "miejscowosc": "Zakopane"}]},
 ]
 
